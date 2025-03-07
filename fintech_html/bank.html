@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Bank of America
+    </h1>
+
+    <img src="bank_of_america-logo.png" class="logo" alt="">
+    <img src="brian_moynihan.jpg" class="ceo" onclick="toWebsite()" style="cursor: pointer;" alt="">
+    
+    <p>
+        Bank Summary
+    </p>
+    
+    <p>
+        Credit Card info
+    </p>
+    
+    <p>
+        <span onclick="toCredit()" style="color: blue; cursor: pointer;">View credit card offers here.</span>
+    </p>
+    
+    <style>
+        .logo {
+        width: 400px;
+        height: 400px;
+    }
+        .ceo {
+            width: 400px;
+            height: 500px;
+            border: 5px solid red;
+        }
+    </style>
+    
+    <script>
+        function toWebsite() {
+            window.open("https://newsroom.bankofamerica.com/content/newsroom/executive-bios/brian-moynihan.html");
+
+        }
+
+        function toCredit() {
+            window.open("https://promo.bankofamerica.com/ccsearchlp10/compare-cards-3/?cm_mmc=Cons-CC-_-Google-PS-_-bank_of_america_credit_cards-_-Brand_Cash&code=TC03ZQ&cq_src=google_ads&cq_med=Credit_Card&cq_cmp=202063505&cq_term=bank%20of%20america%20credit%20cards&cq_net=g&cq_plt=gp&gclsrc=aw.ds&gad_source=1&gbraid=0AAAAAD-5Cc2JMkaAormTxMyWf1zQsEcSH&gclid=Cj0KCQiAz6q-BhCfARIsAOezPxm1YrOJzmqb_8fWjdqk5K6BP98355kX24hetnjfwILsyvVItIXd2awaAvd9EALw_wcB");
+        }
+    </script>
+
+</body>
+</html>
