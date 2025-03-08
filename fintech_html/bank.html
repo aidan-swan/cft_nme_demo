@@ -1,52 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bank of America</title>
 </head>
-<body>
-    <h1>
-        Bank of America
-    </h1>
-
-    <img src="bank_of_america-logo.png" class="logo" alt="">
-    <img src="brian_moynihan.jpg" class="ceo" onclick="toWebsite()" style="cursor: pointer;" alt="">
-    
-    <p>
-        Bank Summary
-    </p>
-    
-    <p>
-        Credit Card info
-    </p>
-    
-    <p>
-        <span onclick="toCredit()" style="color: blue; cursor: pointer;">View credit card offers here.</span>
-    </p>
-    
-    <style>
-        .logo {
-        width: 400px;
-        height: 400px;
+<style>
+    body {
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
     }
-        .ceo {
-            width: 400px;
-            height: 500px;
-            border: 5px solid red;
-        }
-    </style>
-    
-    <script>
-        function toWebsite() {
-            window.open("https://newsroom.bankofamerica.com/content/newsroom/executive-bios/brian-moynihan.html");
 
-        }
+    header {
+        width: 95%;
+    }
 
-        function toCredit() {
-            window.open("https://promo.bankofamerica.com/ccsearchlp10/compare-cards-3/?cm_mmc=Cons-CC-_-Google-PS-_-bank_of_america_credit_cards-_-Brand_Cash&code=TC03ZQ&cq_src=google_ads&cq_med=Credit_Card&cq_cmp=202063505&cq_term=bank%20of%20america%20credit%20cards&cq_net=g&cq_plt=gp&gclsrc=aw.ds&gad_source=1&gbraid=0AAAAAD-5Cc2JMkaAormTxMyWf1zQsEcSH&gclid=Cj0KCQiAz6q-BhCfARIsAOezPxm1YrOJzmqb_8fWjdqk5K6BP98355kX24hetnjfwILsyvVItIXd2awaAvd9EALw_wcB");
-        }
-    </script>
+    .bank-name {
+        margin-top: 40px;
+        font-size: 2.5em;
+    }
 
+    .bank-info {
+        display: flex;
+        flex-direction: row;
+        min-height: 600px;
+        width: 90%;
+        max-width: 1200px;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .bank-summary {
+        flex: 4;
+        margin-left: 20px;
+    }
+
+    .background-info {
+        display: flex;
+        flex-direction: column;
+        flex: 6;
+        text-align: left;
+        padding: 20px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .background-info p,
+    .background-info ul {
+        line-height: 1.6;
+    }
+
+    .background-info ul {
+        padding-left: 20px;
+    }
+
+    .ceo-image {
+        width: 70%;
+        border: 5px solid red;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: none;
+    }
+
+    .ceo-image:hover {
+        transform: scale(1.005);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        border-color: #006eff;
+    }
+
+    .ceo-info {
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 4;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    .credit-offer-button {
+        align-self: center;
+        margin-top: 60px;
+        width: 50%;
+        background-color: #0066cc;
+        border-radius: 8px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .credit-offer-button:hover {
+        background-color: #0056b3;
+        transform: scale(1.01);
+    }
+</style>
+
+<body>
+    <header>
+        <h1 class="bank-name">Bank of America</h1>
+    </header>
+
+    <div class="bank-info">
+        <div class="background-info">
+            <div class="logo-container">
+                <img src="bank_of_america-logo.png" class="logo" alt="Bank of America Logo">
+                <div class="bank-summary">
+                    <h2>Bank Summary</h2>
+                    <p>Bank of America Corporation is an American multinational investment bank and financial services
+                        holding company headquartered in Charlotte, North Carolina. It is the second-largest banking
+                        institution in the United States, after JPMorgan Chase. Initially called Bank of Italy, it was
+                        later renamed Bank of America.</p>
+                </div>
+            </div>
+            <div>
+                <h3>Key Facts</h3>
+                <ul>
+                    <li>Founded: 1904 (as Bank of Italy, later became Bank of America)</li>
+                    <li>Headquarters: Charlotte, North Carolina, USA</li>
+                    <li>Number of Branches: Approximately 4,300 retail financial centers</li>
+                    <li>Number of ATMs: Approximately 17,000</li>
+                </ul>
+            </div>
+            <button onclick="toCredit()" class="credit-offer-button">
+                <h3>Credit Card Offers</h3>
+            </button>
+        </div>
+
+        <div class="ceo-info">
+            <img src="brian_moynihan.jpg" class="ceo-image" onclick="toWebsite()"
+                alt="Bank of America CEO Brian Moynihan">
+            <h3>Brian Moynihan</h3>
+            <p>Chairman of the Board and CEO</p>
+        </div>
+    </div>
 </body>
+
+<script>
+    function toWebsite() {
+        window.open("https://newsroom.bankofamerica.com/content/newsroom/executive-bios/brian-moynihan.html");
+    }
+
+    function toCredit() {
+        window.open("https://promo.bankofamerica.com/ccsearchlp10/compare-cards-3/?cm_mmc=Cons-CC-_-Google-PS-_-bank_of_america_credit_cards-_-Brand_Cash&code=TC03ZQ&cq_src=google_ads&cq_med=Credit_Card&cq_cmp=202063505&cq_term=bank%20of%20america%20credit%20cards&cq_net=g&cq_plt=gp&gclsrc=aw.ds&gad_source=1&gbraid=0AAAAAD-5Cc2JMkaAormTxMyWf1zQsEcSH&gclid=Cj0KCQiAz6q-BhCfARIsAOezPxm1YrOJzmqb_8fWjdqk5K6BP98355kX24hetnjfwILsyvVItIXd2awaAvd9EALw_wcB");
+    }
+</script>
+
 </html>
