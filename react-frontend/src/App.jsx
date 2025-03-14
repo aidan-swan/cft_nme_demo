@@ -1,6 +1,7 @@
 // import { useState } from 'react'
-import Header from "./Header.jsx"
-
+import Homepage from "./Homepage.jsx"
+import Profilepage from "./Profilepage.jsx";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import './App.css'
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <>
       <Router>
         <>
-          <Routes>
+        <Routes>
+
             <Route path="/" element={<Homepage />} />
             <Route path="/profile" element={<Profilepage />} />
           </Routes>
